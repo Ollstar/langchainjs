@@ -1,6 +1,6 @@
 {
   "name": "langchain",
-  "version": "0.0.151",
+  "version": "0.0.158",
   "description": "Typescript bindings for langchain",
   "type": "module",
   "engines": {
@@ -70,12 +70,18 @@
     "chains/sql_db.cjs",
     "chains/sql_db.js",
     "chains/sql_db.d.ts",
+    "chains/graph_qa/cypher.cjs",
+    "chains/graph_qa/cypher.js",
+    "chains/graph_qa/cypher.d.ts",
     "embeddings/base.cjs",
     "embeddings/base.js",
     "embeddings/base.d.ts",
     "embeddings/cache_backed.cjs",
     "embeddings/cache_backed.js",
     "embeddings/cache_backed.d.ts",
+    "embeddings/cloudflare_workersai.cjs",
+    "embeddings/cloudflare_workersai.js",
+    "embeddings/cloudflare_workersai.d.ts",
     "embeddings/fake.cjs",
     "embeddings/fake.js",
     "embeddings/fake.d.ts",
@@ -145,6 +151,9 @@
     "llms/googlepalm.cjs",
     "llms/googlepalm.js",
     "llms/googlepalm.d.ts",
+    "llms/fireworks.cjs",
+    "llms/fireworks.js",
+    "llms/fireworks.d.ts",
     "llms/sagemaker_endpoint.cjs",
     "llms/sagemaker_endpoint.js",
     "llms/sagemaker_endpoint.d.ts",
@@ -175,6 +184,9 @@
     "vectorstores/memory.cjs",
     "vectorstores/memory.js",
     "vectorstores/memory.d.ts",
+    "vectorstores/cloudflare_vectorize.cjs",
+    "vectorstores/cloudflare_vectorize.js",
+    "vectorstores/cloudflare_vectorize.d.ts",
     "vectorstores/chroma.cjs",
     "vectorstores/chroma.js",
     "vectorstores/chroma.d.ts",
@@ -244,6 +256,9 @@
     "vectorstores/vectara.cjs",
     "vectorstores/vectara.js",
     "vectorstores/vectara.d.ts",
+    "vectorstores/vercel_postgres.cjs",
+    "vectorstores/vercel_postgres.js",
+    "vectorstores/vercel_postgres.d.ts",
     "vectorstores/voy.cjs",
     "vectorstores/voy.js",
     "vectorstores/voy.d.ts",
@@ -313,6 +328,9 @@
     "document_loaders/web/notionapi.cjs",
     "document_loaders/web/notionapi.js",
     "document_loaders/web/notionapi.d.ts",
+    "document_loaders/web/pdf.cjs",
+    "document_loaders/web/pdf.js",
+    "document_loaders/web/pdf.d.ts",
     "document_loaders/web/recursive_url.cjs",
     "document_loaders/web/recursive_url.js",
     "document_loaders/web/recursive_url.d.ts",
@@ -325,6 +343,9 @@
     "document_loaders/web/confluence.cjs",
     "document_loaders/web/confluence.js",
     "document_loaders/web/confluence.d.ts",
+    "document_loaders/web/searchapi.cjs",
+    "document_loaders/web/searchapi.js",
+    "document_loaders/web/searchapi.d.ts",
     "document_loaders/web/serpapi.cjs",
     "document_loaders/web/serpapi.js",
     "document_loaders/web/serpapi.d.ts",
@@ -388,6 +409,9 @@
     "chat_models/anthropic.cjs",
     "chat_models/anthropic.js",
     "chat_models/anthropic.d.ts",
+    "chat_models/bedrock.cjs",
+    "chat_models/bedrock.js",
+    "chat_models/bedrock.d.ts",
     "chat_models/googlevertexai.cjs",
     "chat_models/googlevertexai.js",
     "chat_models/googlevertexai.d.ts",
@@ -397,6 +421,9 @@
     "chat_models/googlepalm.cjs",
     "chat_models/googlepalm.js",
     "chat_models/googlepalm.d.ts",
+    "chat_models/fireworks.cjs",
+    "chat_models/fireworks.js",
+    "chat_models/fireworks.d.ts",
     "chat_models/baiduwenxin.cjs",
     "chat_models/baiduwenxin.js",
     "chat_models/baiduwenxin.d.ts",
@@ -511,6 +538,9 @@
     "cache.cjs",
     "cache.js",
     "cache.d.ts",
+    "cache/cloudflare_kv.cjs",
+    "cache/cloudflare_kv.js",
+    "cache/cloudflare_kv.d.ts",
     "cache/momento.cjs",
     "cache/momento.js",
     "cache/momento.d.ts",
@@ -535,6 +565,9 @@
     "stores/file/node.cjs",
     "stores/file/node.js",
     "stores/file/node.d.ts",
+    "stores/message/cloudflare_d1.cjs",
+    "stores/message/cloudflare_d1.js",
+    "stores/message/cloudflare_d1.d.ts",
     "stores/message/in_memory.cjs",
     "stores/message/in_memory.js",
     "stores/message/in_memory.d.ts",
@@ -571,6 +604,9 @@
     "storage/ioredis.cjs",
     "storage/ioredis.js",
     "storage/ioredis.d.ts",
+    "graphs/neo4j_graph.cjs",
+    "graphs/neo4j_graph.js",
+    "graphs/neo4j_graph.d.ts",
     "hub.cjs",
     "hub.js",
     "hub.d.ts",
@@ -641,11 +677,11 @@
     "@aws-sdk/client-sagemaker-runtime": "^3.310.0",
     "@aws-sdk/client-sfn": "^3.362.0",
     "@aws-sdk/credential-provider-node": "^3.388.0",
-    "@aws-sdk/protocol-http": "^3.374.0",
-    "@aws-sdk/signature-v4": "^3.374.0",
     "@aws-sdk/types": "^3.357.0",
     "@azure/storage-blob": "^12.15.0",
     "@clickhouse/client": "^0.0.14",
+    "@cloudflare/ai": "^1.0.12",
+    "@cloudflare/workers-types": "^4.20230922.0",
     "@elastic/elasticsearch": "^8.4.0",
     "@faker-js/faker": "^7.6.0",
     "@getmetal/metal-sdk": "^4.0.0",
@@ -663,9 +699,13 @@
     "@qdrant/js-client-rest": "^1.2.0",
     "@raycast/api": "^1.55.2",
     "@smithy/eventstream-codec": "^2.0.5",
+    "@smithy/protocol-http": "^3.0.6",
+    "@smithy/signature-v4": "^2.0.10",
     "@smithy/util-utf8": "^2.0.0",
     "@supabase/postgrest-js": "^1.1.1",
     "@supabase/supabase-js": "^2.10.0",
+    "@swc/core": "^1.3.90",
+    "@swc/jest": "^0.2.29",
     "@tensorflow-models/universal-sentence-encoder": "^1.3.3",
     "@tensorflow/tfjs-backend-cpu": "^3",
     "@tensorflow/tfjs-converter": "^3.6.0",
@@ -686,6 +726,7 @@
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "@upstash/redis": "^1.20.6",
+    "@vercel/postgres": "^0.5.0",
     "@writerai/writer-sdk": "^0.40.2",
     "@xata.io/client": "^0.25.1",
     "@xenova/transformers": "^2.5.4",
@@ -722,6 +763,7 @@
     "ml-matrix": "^6.10.4",
     "mongodb": "^5.2.0",
     "mysql2": "^3.3.3",
+    "neo4j-driver": "^5.12.0",
     "node-llama-cpp": "^2.1.2",
     "notion-to-md": "^3.1.0",
     "pdf-parse": "1.1.1",
@@ -761,10 +803,9 @@
     "@aws-sdk/client-sagemaker-runtime": "^3.310.0",
     "@aws-sdk/client-sfn": "^3.310.0",
     "@aws-sdk/credential-provider-node": "^3.388.0",
-    "@aws-sdk/protocol-http": "^3.374.0",
-    "@aws-sdk/signature-v4": "^3.374.0",
     "@azure/storage-blob": "^12.15.0",
     "@clickhouse/client": "^0.0.14",
+    "@cloudflare/ai": "^1.0.12",
     "@elastic/elasticsearch": "^8.4.0",
     "@getmetal/metal-sdk": "*",
     "@getzep/zep-js": "^0.7.0",
@@ -780,6 +821,8 @@
     "@qdrant/js-client-rest": "^1.2.0",
     "@raycast/api": "^1.55.2",
     "@smithy/eventstream-codec": "^2.0.5",
+    "@smithy/protocol-http": "^3.0.6",
+    "@smithy/signature-v4": "^2.0.10",
     "@smithy/util-utf8": "^2.0.0",
     "@supabase/postgrest-js": "^1.1.1",
     "@supabase/supabase-js": "^2.10.0",
@@ -787,6 +830,7 @@
     "@tensorflow/tfjs-converter": "*",
     "@tensorflow/tfjs-core": "*",
     "@upstash/redis": "^1.20.6",
+    "@vercel/postgres": "^0.5.0",
     "@writerai/writer-sdk": "^0.40.2",
     "@xata.io/client": "^0.25.1",
     "@xenova/transformers": "^2.5.4",
@@ -811,6 +855,7 @@
     "mammoth": "*",
     "mongodb": "^5.2.0",
     "mysql2": "^3.3.3",
+    "neo4j-driver": "*",
     "node-llama-cpp": "*",
     "notion-to-md": "^3.1.0",
     "pdf-parse": "1.1.1",
@@ -859,16 +904,13 @@
     "@aws-sdk/credential-provider-node": {
       "optional": true
     },
-    "@aws-sdk/protocol-http": {
-      "optional": true
-    },
-    "@aws-sdk/signature-v4": {
-      "optional": true
-    },
     "@azure/storage-blob": {
       "optional": true
     },
     "@clickhouse/client": {
+      "optional": true
+    },
+    "@cloudflare/ai": {
       "optional": true
     },
     "@elastic/elasticsearch": {
@@ -916,6 +958,12 @@
     "@smithy/eventstream-codec": {
       "optional": true
     },
+    "@smithy/protocol-http": {
+      "optional": true
+    },
+    "@smithy/signature-v4": {
+      "optional": true
+    },
     "@smithy/util-utf8": {
       "optional": true
     },
@@ -935,6 +983,9 @@
       "optional": true
     },
     "@upstash/redis": {
+      "optional": true
+    },
+    "@vercel/postgres": {
       "optional": true
     },
     "@writerai/writer-sdk": {
@@ -1007,6 +1058,9 @@
       "optional": true
     },
     "mysql2": {
+      "optional": true
+    },
+    "neo4j-driver": {
       "optional": true
     },
     "node-llama-cpp": {
@@ -1097,7 +1151,7 @@
     "p-retry": "4",
     "uuid": "^9.0.0",
     "yaml": "^2.2.1",
-    "zod": "^3.21.4",
+    "zod": "^3.22.2",
     "zod-to-json-schema": "^3.20.4"
   },
   "publishConfig": {
@@ -1218,6 +1272,11 @@
       "import": "./chains/sql_db.js",
       "require": "./chains/sql_db.cjs"
     },
+    "./chains/graph_qa/cypher": {
+      "types": "./chains/graph_qa/cypher.d.ts",
+      "import": "./chains/graph_qa/cypher.js",
+      "require": "./chains/graph_qa/cypher.cjs"
+    },
     "./embeddings/base": {
       "types": "./embeddings/base.d.ts",
       "import": "./embeddings/base.js",
@@ -1227,6 +1286,11 @@
       "types": "./embeddings/cache_backed.d.ts",
       "import": "./embeddings/cache_backed.js",
       "require": "./embeddings/cache_backed.cjs"
+    },
+    "./embeddings/cloudflare_workersai": {
+      "types": "./embeddings/cloudflare_workersai.d.ts",
+      "import": "./embeddings/cloudflare_workersai.js",
+      "require": "./embeddings/cloudflare_workersai.cjs"
     },
     "./embeddings/fake": {
       "types": "./embeddings/fake.d.ts",
@@ -1343,6 +1407,11 @@
       "import": "./llms/googlepalm.js",
       "require": "./llms/googlepalm.cjs"
     },
+    "./llms/fireworks": {
+      "types": "./llms/fireworks.d.ts",
+      "import": "./llms/fireworks.js",
+      "require": "./llms/fireworks.cjs"
+    },
     "./llms/sagemaker_endpoint": {
       "types": "./llms/sagemaker_endpoint.d.ts",
       "import": "./llms/sagemaker_endpoint.js",
@@ -1392,6 +1461,11 @@
       "types": "./vectorstores/memory.d.ts",
       "import": "./vectorstores/memory.js",
       "require": "./vectorstores/memory.cjs"
+    },
+    "./vectorstores/cloudflare_vectorize": {
+      "types": "./vectorstores/cloudflare_vectorize.d.ts",
+      "import": "./vectorstores/cloudflare_vectorize.js",
+      "require": "./vectorstores/cloudflare_vectorize.cjs"
     },
     "./vectorstores/chroma": {
       "types": "./vectorstores/chroma.d.ts",
@@ -1508,6 +1582,11 @@
       "import": "./vectorstores/vectara.js",
       "require": "./vectorstores/vectara.cjs"
     },
+    "./vectorstores/vercel_postgres": {
+      "types": "./vectorstores/vercel_postgres.d.ts",
+      "import": "./vectorstores/vercel_postgres.js",
+      "require": "./vectorstores/vercel_postgres.cjs"
+    },
     "./vectorstores/voy": {
       "types": "./vectorstores/voy.d.ts",
       "import": "./vectorstores/voy.js",
@@ -1623,6 +1702,11 @@
       "import": "./document_loaders/web/notionapi.js",
       "require": "./document_loaders/web/notionapi.cjs"
     },
+    "./document_loaders/web/pdf": {
+      "types": "./document_loaders/web/pdf.d.ts",
+      "import": "./document_loaders/web/pdf.js",
+      "require": "./document_loaders/web/pdf.cjs"
+    },
     "./document_loaders/web/recursive_url": {
       "types": "./document_loaders/web/recursive_url.d.ts",
       "import": "./document_loaders/web/recursive_url.js",
@@ -1642,6 +1726,11 @@
       "types": "./document_loaders/web/confluence.d.ts",
       "import": "./document_loaders/web/confluence.js",
       "require": "./document_loaders/web/confluence.cjs"
+    },
+    "./document_loaders/web/searchapi": {
+      "types": "./document_loaders/web/searchapi.d.ts",
+      "import": "./document_loaders/web/searchapi.js",
+      "require": "./document_loaders/web/searchapi.cjs"
     },
     "./document_loaders/web/serpapi": {
       "types": "./document_loaders/web/serpapi.d.ts",
@@ -1748,6 +1837,11 @@
       "import": "./chat_models/anthropic.js",
       "require": "./chat_models/anthropic.cjs"
     },
+    "./chat_models/bedrock": {
+      "types": "./chat_models/bedrock.d.ts",
+      "import": "./chat_models/bedrock.js",
+      "require": "./chat_models/bedrock.cjs"
+    },
     "./chat_models/googlevertexai": {
       "types": "./chat_models/googlevertexai.d.ts",
       "import": "./chat_models/googlevertexai.js",
@@ -1762,6 +1856,11 @@
       "types": "./chat_models/googlepalm.d.ts",
       "import": "./chat_models/googlepalm.js",
       "require": "./chat_models/googlepalm.cjs"
+    },
+    "./chat_models/fireworks": {
+      "types": "./chat_models/fireworks.d.ts",
+      "import": "./chat_models/fireworks.js",
+      "require": "./chat_models/fireworks.cjs"
     },
     "./chat_models/baiduwenxin": {
       "types": "./chat_models/baiduwenxin.d.ts",
@@ -1953,6 +2052,11 @@
       "import": "./cache.js",
       "require": "./cache.cjs"
     },
+    "./cache/cloudflare_kv": {
+      "types": "./cache/cloudflare_kv.d.ts",
+      "import": "./cache/cloudflare_kv.js",
+      "require": "./cache/cloudflare_kv.cjs"
+    },
     "./cache/momento": {
       "types": "./cache/momento.d.ts",
       "import": "./cache/momento.js",
@@ -1992,6 +2096,11 @@
       "types": "./stores/file/node.d.ts",
       "import": "./stores/file/node.js",
       "require": "./stores/file/node.cjs"
+    },
+    "./stores/message/cloudflare_d1": {
+      "types": "./stores/message/cloudflare_d1.d.ts",
+      "import": "./stores/message/cloudflare_d1.js",
+      "require": "./stores/message/cloudflare_d1.cjs"
     },
     "./stores/message/in_memory": {
       "types": "./stores/message/in_memory.d.ts",
@@ -2052,6 +2161,11 @@
       "types": "./storage/ioredis.d.ts",
       "import": "./storage/ioredis.js",
       "require": "./storage/ioredis.cjs"
+    },
+    "./graphs/neo4j_graph": {
+      "types": "./graphs/neo4j_graph.d.ts",
+      "import": "./graphs/neo4j_graph.js",
+      "require": "./graphs/neo4j_graph.cjs"
     },
     "./hub": {
       "types": "./hub.d.ts",

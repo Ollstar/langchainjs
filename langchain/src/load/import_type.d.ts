@@ -37,6 +37,12 @@ export interface OptionalImportMap {
   "langchain/chains/sql_db"?:
     | typeof import("../chains/sql_db/index.js")
     | Promise<typeof import("../chains/sql_db/index.js")>;
+  "langchain/chains/graph_qa/cypher"?:
+    | typeof import("../chains/graph_qa/cypher.js")
+    | Promise<typeof import("../chains/graph_qa/cypher.js")>;
+  "langchain/embeddings/cloudflare_workersai"?:
+    | typeof import("../embeddings/cloudflare_workersai.js")
+    | Promise<typeof import("../embeddings/cloudflare_workersai.js")>;
   "langchain/embeddings/cohere"?:
     | typeof import("../embeddings/cohere.js")
     | Promise<typeof import("../embeddings/cohere.js")>;
@@ -100,6 +106,9 @@ export interface OptionalImportMap {
   "langchain/vectorstores/elasticsearch"?:
     | typeof import("../vectorstores/elasticsearch.js")
     | Promise<typeof import("../vectorstores/elasticsearch.js")>;
+  "langchain/vectorstores/cloudflare_vectorize"?:
+    | typeof import("../vectorstores/cloudflare_vectorize.js")
+    | Promise<typeof import("../vectorstores/cloudflare_vectorize.js")>;
   "langchain/vectorstores/chroma"?:
     | typeof import("../vectorstores/chroma.js")
     | Promise<typeof import("../vectorstores/chroma.js")>;
@@ -163,6 +172,9 @@ export interface OptionalImportMap {
   "langchain/vectorstores/usearch"?:
     | typeof import("../vectorstores/usearch.js")
     | Promise<typeof import("../vectorstores/usearch.js")>;
+  "langchain/vectorstores/vercel_postgres"?:
+    | typeof import("../vectorstores/vercel_postgres.js")
+    | Promise<typeof import("../vectorstores/vercel_postgres.js")>;
   "langchain/vectorstores/voy"?:
     | typeof import("../vectorstores/voy.js")
     | Promise<typeof import("../vectorstores/voy.js")>;
@@ -217,6 +229,9 @@ export interface OptionalImportMap {
   "langchain/document_loaders/web/notionapi"?:
     | typeof import("../document_loaders/web/notionapi.js")
     | Promise<typeof import("../document_loaders/web/notionapi.js")>;
+  "langchain/document_loaders/web/pdf"?:
+    | typeof import("../document_loaders/web/pdf.js")
+    | Promise<typeof import("../document_loaders/web/pdf.js")>;
   "langchain/document_loaders/web/recursive_url"?:
     | typeof import("../document_loaders/web/recursive_url.js")
     | Promise<typeof import("../document_loaders/web/recursive_url.js")>;
@@ -274,6 +289,9 @@ export interface OptionalImportMap {
   "langchain/document_transformers/mozilla_readability"?:
     | typeof import("../document_transformers/mozilla_readability.js")
     | Promise<typeof import("../document_transformers/mozilla_readability.js")>;
+  "langchain/chat_models/bedrock"?:
+    | typeof import("../chat_models/bedrock.js")
+    | Promise<typeof import("../chat_models/bedrock.js")>;
   "langchain/chat_models/googlevertexai"?:
     | typeof import("../chat_models/googlevertexai/index.js")
     | Promise<typeof import("../chat_models/googlevertexai/index.js")>;
@@ -322,6 +340,9 @@ export interface OptionalImportMap {
   "langchain/retrievers/self_query/weaviate"?:
     | typeof import("../retrievers/self_query/weaviate.js")
     | Promise<typeof import("../retrievers/self_query/weaviate.js")>;
+  "langchain/cache/cloudflare_kv"?:
+    | typeof import("../cache/cloudflare_kv.js")
+    | Promise<typeof import("../cache/cloudflare_kv.js")>;
   "langchain/cache/momento"?:
     | typeof import("../cache/momento.js")
     | Promise<typeof import("../cache/momento.js")>;
@@ -340,6 +361,9 @@ export interface OptionalImportMap {
   "langchain/stores/file/node"?:
     | typeof import("../stores/file/node.js")
     | Promise<typeof import("../stores/file/node.js")>;
+  "langchain/stores/message/cloudflare_d1"?:
+    | typeof import("../stores/message/cloudflare_d1.js")
+    | Promise<typeof import("../stores/message/cloudflare_d1.js")>;
   "langchain/stores/message/dynamodb"?:
     | typeof import("../stores/message/dynamodb.js")
     | Promise<typeof import("../stores/message/dynamodb.js")>;
@@ -370,6 +394,9 @@ export interface OptionalImportMap {
   "langchain/storage/ioredis"?:
     | typeof import("../storage/ioredis.js")
     | Promise<typeof import("../storage/ioredis.js")>;
+  "langchain/graphs/neo4j_graph"?:
+    | typeof import("../graphs/neo4j_graph.js")
+    | Promise<typeof import("../graphs/neo4j_graph.js")>;
   "langchain/hub"?:
     | typeof import("../hub.js")
     | Promise<typeof import("../hub.js")>;
@@ -395,6 +422,7 @@ export interface SecretMap {
   BAIDU_SECRET_KEY?: string;
   COHERE_API_KEY?: string;
   DATABERRY_API_KEY?: string;
+  FIREWORKS_API_KEY?: string;
   GOOGLE_API_KEY?: string;
   GOOGLE_PALM_API_KEY?: string;
   GOOGLE_VERTEX_AI_WEB_CREDENTIALS?: string;
